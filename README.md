@@ -1,1 +1,5 @@
 # RoadScene
+
+This project is about the road scene classification that I did for our local roads like in lahore. More details are provided in the above attached pdf file. I used an RNN inspired spatio-temporal approach for road scene classification. First a classification model was made based with transfer learning approach in which pre-trained resnet50 model was used as the base model and works by classifying the frame based on spatial features of the provided image as input.
+
+Then, to make the predictions of the system more smooth in the live settings I introduced temporality. That means, whenever an image frame is passed through a classification model its probability is combined with the probability of previous 10 images. This way, the effect of previous images/frames will also appear on the current frames. This basically exploits the fact that in the live setting, the scene does not change very randomly, the effect of previous image frame/scene will always appear on the current image frame. This method reduces error and provudes with more robust scene classification result. 
